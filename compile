@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# halt on first error
+set -e 
+
+# use 'clang++' as the compiler
+CPP=clang++
+
+# variable storing warning signs
+FLAGS="-g -Wall -Wextra -Werror -Wfatal-errors -std=c++11 -pedantic"
+
+# clear out old object files
+rm -f *.o
+
+# compile and run code
+$CPP $FLAGS -o language main.cpp tg.cpp
